@@ -34,22 +34,22 @@ for msg in emails:
   content_type = msg.get_content_type()
   if content_type not in content_types:
     content_types.append(content_type)
-# print(content_types)
+print(content_types)
 
 
-content_types = []
-for msg in emails:
-  msg = email.message_from_string(msg)
-  content_type = msg.get_content_type()
-  if content_type == 'multipart/related':
-    for part in msg.walk():
-         if part.get_content_type() == "text/plain":
-          # Récupération du corps du message
-            body = part.get_payload(decode=True).decode(part.get_content_charset())
-        #   return body
-        # body = msg.get_payload(0).get_payload(decode=True)
-            print(body)
-            break
+# content_types = []
+# for msg in emails:
+#   msg = email.message_from_string(msg)
+#   content_type = msg.get_content_type()
+#   if content_type == 'multipart/related':
+#     for part in msg.walk():
+#          if part.get_content_type() == "text/plain":
+#           # Récupération du corps du message
+#             body = part.get_payload(decode=True).decode(part.get_content_charset())
+#         #   return body
+#         # body = msg.get_payload(0).get_payload(decode=True)
+#             print(body)
+#             break
 
 
 
